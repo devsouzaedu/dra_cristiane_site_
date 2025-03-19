@@ -19,7 +19,7 @@ body {
 
 @layer components {
   .container-section {
-    @apply max-w-7xl mx-auto px-4 py-16;
+    @apply max-w-6xl mx-auto px-6 py-10;
   }
   
   .btn-primary {
@@ -27,19 +27,19 @@ body {
   }
   
   .title-section {
-    @apply text-3xl font-bold mb-8 text-[var(--dark)];
+    @apply text-3xl font-bold mb-6 text-[var(--dark)];
   }
   
   .subtitle {
-    @apply text-xl font-semibold text-[var(--dark)] mb-4;
+    @apply text-xl font-semibold text-[var(--dark)] mb-3;
   }
 }
 
 /* Adicionar media queries manualmente */
 @media (min-width: 640px) {
   .container-section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .title-section {
@@ -55,13 +55,20 @@ body {
 
 @media (min-width: 1024px) {
   .container-section {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   
   .title-section {
     font-size: 3rem;
     line-height: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 

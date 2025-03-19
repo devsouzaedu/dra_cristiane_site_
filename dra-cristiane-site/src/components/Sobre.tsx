@@ -5,7 +5,7 @@ import { FaMedal, FaUserMd, FaHospital } from "react-icons/fa";
 
 const Sobre = () => {
   return (
-    <section id="sobre" className="bg-white py-20">
+    <section id="sobre" className="bg-primary/20 py-12">
       <div className="container-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const Sobre = () => {
           <h2 className="title-section text-center">Sobre Mim</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ const Sobre = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <p className="text-lg">
               Sou Cristiane Pereira Duarte, Psicóloga Clínica, Hospitalar e Analista do Comportamento ABA, 
@@ -65,16 +65,16 @@ const Sobre = () => {
               profissionalismo e uma relação de especial confiança, acolhimento, empatia, transparência e autenticidade.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="flex flex-col items-center bg-light rounded-lg p-4 shadow-sm">
+            <div className="grid grid-cols-3 gap-4 pt-2">
+              <div className="flex flex-col items-center bg-white rounded-lg p-3 shadow-sm">
                 <FaMedal className="text-3xl text-primary mb-2" />
                 <p className="text-center text-sm font-medium">25+ anos de experiência</p>
               </div>
-              <div className="flex flex-col items-center bg-light rounded-lg p-4 shadow-sm">
+              <div className="flex flex-col items-center bg-white rounded-lg p-3 shadow-sm">
                 <FaUserMd className="text-3xl text-primary mb-2" />
                 <p className="text-center text-sm font-medium">Pós-graduações especializadas</p>
               </div>
-              <div className="flex flex-col items-center bg-light rounded-lg p-4 shadow-sm">
+              <div className="flex flex-col items-center bg-white rounded-lg p-3 shadow-sm">
                 <FaHospital className="text-3xl text-primary mb-2" />
                 <p className="text-center text-sm font-medium">Experiência hospitalar</p>
               </div>
@@ -87,9 +87,9 @@ const Sobre = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-16"
+          className="mt-10"
         >
-          <h3 className="subtitle text-center mb-8">Meu Consultório</h3>
+          <h3 className="subtitle text-center mb-6">Meu Consultório</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all">
               <Image 
@@ -97,7 +97,7 @@ const Sobre = () => {
                 alt="Fachada do consultório" 
                 width={400} 
                 height={300}
-                className="object-cover w-full h-60"
+                className="object-cover w-full h-52"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all">
@@ -106,7 +106,7 @@ const Sobre = () => {
                 alt="Consultório interno" 
                 width={400} 
                 height={300}
-                className="object-cover w-full h-60"
+                className="object-cover w-full h-52"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all">
@@ -115,7 +115,7 @@ const Sobre = () => {
                 alt="Ambiente de terapia" 
                 width={400} 
                 height={300}
-                className="object-cover w-full h-60"
+                className="object-cover w-full h-52"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all">
@@ -124,7 +124,7 @@ const Sobre = () => {
                 alt="Sala de atendimento" 
                 width={400} 
                 height={300}
-                className="object-cover w-full h-60"
+                className="object-cover w-full h-52"
               />
             </div>
           </div>

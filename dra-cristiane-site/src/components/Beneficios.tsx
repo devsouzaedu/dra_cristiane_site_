@@ -38,14 +38,14 @@ const beneficios = [
 
 const Beneficios = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-light">
+    <section className="py-12 bg-primary/20">
       <div className="container-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="title-section">Benefícios da Psicoterapia</h2>
           <p className="text-lg max-w-3xl mx-auto">
@@ -54,7 +54,7 @@ const Beneficios = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {beneficios.map((beneficio, index) => (
             <motion.div
               key={index}
@@ -62,10 +62,10 @@ const Beneficios = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="mb-4 bg-light p-4 rounded-full">{beneficio.icone}</div>
+                <div className="mb-3 bg-primary/10 p-4 rounded-full">{beneficio.icone}</div>
                 <h3 className="subtitle mb-2">{beneficio.titulo}</h3>
                 <p>{beneficio.descricao}</p>
               </div>
@@ -78,9 +78,9 @@ const Beneficios = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16"
+          className="mt-10"
         >
-          <div className="relative bg-primary px-8 py-10 rounded-lg shadow-md">
+          <div className="relative bg-primary px-6 py-8 rounded-lg shadow-md">
             <div className="absolute -top-6 -left-6 text-6xl text-primary-dark opacity-30">
               <FaQuoteLeft />
             </div>
@@ -88,13 +88,13 @@ const Beneficios = () => {
               <FaQuoteRight />
             </div>
             
-            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md">
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
                 <Image 
                   src="/images/dra_cris_pfp.jpeg" 
                   alt="Dra. Cristiane" 
-                  width={128} 
-                  height={128}
+                  width={112} 
+                  height={112}
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -103,7 +103,7 @@ const Beneficios = () => {
                   "Desejo sempre do fundo do meu coração, que a vida de meus pacientes seja repleta de 
                   saúde e bem-estar físico, mental e psicológico!"
                 </p>
-                <p className="mt-4 font-semibold">Dra. Cristiane Pereira Duarte</p>
+                <p className="mt-3 font-semibold">Dra. Cristiane Pereira Duarte</p>
                 <p className="text-sm">Psicóloga Clínica - CRP n. 06/63449-8</p>
               </div>
             </div>
@@ -115,11 +115,11 @@ const Beneficios = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-10 text-center"
         >
-          <div className="inline-block bg-white p-6 rounded-lg shadow-md">
-            <h3 className="subtitle mb-4">Agende sua consulta</h3>
-            <p className="mb-6">
+          <div className="inline-block bg-white p-5 rounded-lg shadow-md">
+            <h3 className="subtitle mb-3">Agende sua consulta</h3>
+            <p className="mb-4">
               Estou à disposição para te ajudar a conquistar mais bem-estar e qualidade de vida. 
               Entre em contato para agendar sua consulta.
             </p>

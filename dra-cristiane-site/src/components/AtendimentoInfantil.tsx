@@ -33,18 +33,18 @@ const cardsInfo = [
 
 const AtendimentoInfantil = () => {
   return (
-    <section id="atendimento-infantil" className="py-20 bg-light">
+    <section id="atendimento-infantil" className="py-12 bg-primary/20">
       <div className="container-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="flex items-center justify-center gap-3 mb-2">
             <FaChild className="text-4xl text-primary" />
-            <h2 className="title-section">Psicoterapia Infantil</h2>
+            <h2 className="title-section mb-0">Psicoterapia Infantil</h2>
           </div>
           <p className="text-lg max-w-3xl mx-auto">
             Atendimento especializado para crianças e adolescentes em um ambiente acolhedor e 
@@ -52,15 +52,15 @@ const AtendimentoInfantil = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <h3 className="subtitle mb-4">Por que a terapia infantil é importante?</h3>
+            <h3 className="subtitle mb-2">Por que a terapia infantil é importante?</h3>
             
             <p className="text-lg">
               A psicoterapia infantil oferece apoio emocional durante fases críticas do desenvolvimento, 
@@ -87,7 +87,7 @@ const AtendimentoInfantil = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               <div className="rounded-lg overflow-hidden shadow-md">
                 <Image 
                   src="/images/psico_terapia_infantil_em_barueri_aphaville (1).jpeg" 
@@ -134,8 +134,8 @@ const AtendimentoInfantil = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.6 }}
         >
-          <h3 className="subtitle text-center mb-8">Abordagens utilizadas</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <h3 className="subtitle text-center mb-6">Abordagens utilizadas</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
             {cardsInfo.map((card, index) => (
               <motion.div
                 key={index}
@@ -143,12 +143,12 @@ const AtendimentoInfantil = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all text-center"
+                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all text-center"
               >
-                <div className="flex justify-center mb-3">
+                <div className="flex justify-center mb-2">
                   {card.icone}
                 </div>
-                <h4 className="font-medium mb-2">{card.titulo}</h4>
+                <h4 className="font-medium mb-1">{card.titulo}</h4>
                 <p className="text-sm">{card.descricao}</p>
               </motion.div>
             ))}

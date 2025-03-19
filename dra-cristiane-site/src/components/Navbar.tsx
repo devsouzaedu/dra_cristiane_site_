@@ -39,7 +39,7 @@ const Navbar = () => {
           </Link>
 
           {/* Menu para desktop */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             <Link href="/" className="text-dark hover:text-primary-dark font-medium transition-colors">
               Início
             </Link>
@@ -48,6 +48,9 @@ const Navbar = () => {
             </Link>
             <Link href="/#abordagem" className="text-dark hover:text-primary-dark font-medium transition-colors">
               Abordagem
+            </Link>
+            <Link href="/#atendimento-infantil" className="text-dark hover:text-primary-dark font-medium transition-colors">
+              Infantil
             </Link>
             <Link href="/#experiencia" className="text-dark hover:text-primary-dark font-medium transition-colors">
               Experiência
@@ -78,6 +81,9 @@ const Navbar = () => {
           </Link>
           <Link href="/#abordagem" className="text-dark hover:text-primary-dark font-medium transition-colors" onClick={toggleMenu}>
             Abordagem
+          </Link>
+          <Link href="/#atendimento-infantil" className="text-dark hover:text-primary-dark font-medium transition-colors" onClick={toggleMenu}>
+            Psicoterapia Infantil
           </Link>
           <Link href="/#experiencia" className="text-dark hover:text-primary-dark font-medium transition-colors" onClick={toggleMenu}>
             Experiência

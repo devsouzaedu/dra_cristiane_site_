@@ -22,14 +22,14 @@ const abordagens = [
 
 const Abordagem = () => {
   return (
-    <section id="abordagem" className="bg-gradient-to-b from-light to-white py-20">
+    <section id="abordagem" className="bg-white py-12">
       <div className="container-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-10"
         >
           <h2 className="title-section">Abordagem Terapêutica</h2>
           <p className="text-lg">
@@ -39,7 +39,7 @@ const Abordagem = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {abordagens.map((abordagem, index) => (
             <motion.div
               key={index}
@@ -47,7 +47,7 @@ const Abordagem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-md border-t-4 border-primary hover:shadow-lg transition-shadow"
+              className="bg-primary/10 p-6 rounded-lg shadow-md border-t-4 border-primary hover:shadow-lg transition-shadow"
             >
               <h3 className="subtitle">{abordagem.titulo}</h3>
               <p>{abordagem.descricao}</p>
@@ -60,9 +60,9 @@ const Abordagem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16 bg-primary/10 p-8 rounded-lg border border-primary"
+          className="mt-10 bg-primary/20 p-6 rounded-lg border border-primary"
         >
-          <h3 className="subtitle text-center mb-6">Metodologia</h3>
+          <h3 className="subtitle text-center mb-4">Metodologia</h3>
           <p className="text-center max-w-3xl mx-auto">
             A metodologia é dinâmica e agrega suporte emocional, raciocínio analítico-estratégico, 
             psicoeducação e planejamento terapêutico. O processo terapêutico busca construir conexões 

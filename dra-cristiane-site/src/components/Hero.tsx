@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-light via-primary/10 to-accent/10">
+    <section className="relative min-h-[80vh] flex items-center bg-white">
       <div className="absolute inset-0 bg-[url('/images/bg-pattern.svg')] opacity-10"></div>
       <div className="container-section relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -14,13 +14,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark mb-4">
               Dra. Cristiane Pereira Duarte
             </h1>
-            <h2 className="text-2xl sm:text-3xl font-medium text-secondary mb-8">
+            <h2 className="text-2xl sm:text-3xl font-medium text-secondary mb-4">
               Psicóloga Clínica e Hospitalar
             </h2>
-            <p className="text-lg mb-8 max-w-lg">
+            <p className="text-lg mb-6 max-w-lg">
               Mais de 25 anos de experiência dedicados ao seu bem-estar emocional e 
               saúde mental. Atendimento personalizado para crianças, adolescentes e adultos.
             </p>
