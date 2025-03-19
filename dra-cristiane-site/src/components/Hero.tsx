@@ -50,8 +50,8 @@ const Hero = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Atendimento humanizado</h3>
                   <p className="mb-6">
-                    "O meu objetivo é dar a melhor ajuda para a sua saúde psicológica e o seu bem-estar emocional, 
-                    através do recurso da Psicologia."
+                    &ldquo;O meu objetivo é dar a melhor ajuda para a sua saúde psicológica e o seu bem-estar emocional, 
+                    através do recurso da Psicologia.&rdquo;
                   </p>
                 </div>
                 <div className="pt-4 border-t border-gray-100">

@@ -100,8 +100,8 @@ const Beneficios = () => {
               </div>
               <div>
                 <p className="text-lg font-medium italic">
-                  "Desejo sempre do fundo do meu coração, que a vida de meus pacientes seja repleta de 
-                  saúde e bem-estar físico, mental e psicológico!"
+                  &ldquo;Desejo sempre do fundo do meu coração, que a vida de meus pacientes seja repleta de 
+                  saúde e bem-estar físico, mental e psicológico!&rdquo;
                 </p>
                 <p className="mt-3 font-semibold">Dra. Cristiane Pereira Duarte</p>
                 <p className="text-sm">Psicóloga Clínica - CRP n. 06/63449-8</p>
