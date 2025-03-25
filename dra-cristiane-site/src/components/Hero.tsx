@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center bg-white">
+    <section className="relative min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-80px)] flex items-center bg-white">
       <div className="absolute inset-0 bg-[url('/images/bg-pattern.svg')] opacity-10"></div>
       <div className="container-section relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -25,9 +25,14 @@ const Hero = () => {
               saúde mental. Atendimento personalizado para crianças, adolescentes e adultos.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contato" className="btn-primary">
+              <a 
+                href="https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
                 Agende uma Consulta
-              </Link>
+              </a>
               <Link 
                 href="/#sobre" 
                 className="bg-white text-dark border border-primary py-2 px-6 rounded-md hover:bg-primary/10 transition-all duration-300"
