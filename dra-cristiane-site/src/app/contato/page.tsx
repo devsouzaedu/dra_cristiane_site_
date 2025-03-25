@@ -85,17 +85,12 @@ const ContatoPage = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Telefone</h3>
-                      <p>(11) 99999-9999</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-primary/20 p-3 rounded-full mr-4">
-                      <FaEnvelope className="text-primary-dark" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-lg">Email</h3>
-                      <p>contato@dracristiane.com.br</p>
+                      <a 
+                        href="tel:+5511997876371"
+                        className="hover:text-primary-dark transition-colors"
+                      >
+                        (11) 99787-6371
+                      </a>
                     </div>
                   </div>
                   
@@ -105,16 +100,29 @@ const ContatoPage = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">WhatsApp</h3>
-                      <p>
-                        <a 
-                          href="https://wa.me/5511999999999" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-primary-dark hover:underline"
-                        >
-                          Clique aqui para conversar
-                        </a>
-                      </p>
+                      <a 
+                        href="https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-primary-dark transition-colors"
+                      >
+                        (11) 99787-6371
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-primary/20 p-3 rounded-full mr-4">
+                      <FaEnvelope className="text-primary-dark" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-lg">Email</h3>
+                      <a 
+                        href="mailto:crisbia20@hotmail.com"
+                        className="hover:text-primary-dark transition-colors"
+                      >
+                        crisbia20@hotmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
