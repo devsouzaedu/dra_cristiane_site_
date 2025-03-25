@@ -27,7 +27,7 @@ const Sobre = () => {
               <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
                 <div className="aspect-[4/5] bg-white">
                   <Image 
-                    src="/images/dra_cris_pfp.jpeg" 
+                    src="/images/dra_cris_perfil2.jpeg" 
                     alt="Dra. Cristiane Pereira Duarte" 
                     width={500} 
                     height={625}

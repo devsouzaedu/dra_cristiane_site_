@@ -39,7 +39,7 @@ const Navbar = () => {
           </Link>
 
           {/* Menu para desktop */}
-          <div className="hidden md:flex space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link href="/" className="text-dark hover:text-primary-dark font-medium transition-colors">
               Início
             </Link>
@@ -61,6 +61,14 @@ const Navbar = () => {
             <Link href="/contato" className="text-dark hover:text-primary-dark font-medium transition-colors">
               Contato
             </Link>
+            <a 
+              href="https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-primary"
+            >
+              Agendar Consulta
+            </a>
           </div>
 
           {/* Botão do menu mobile */}
@@ -71,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {/* Menu mobile */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-screen bg-white" : "max-h-0"}`}>
+      <div className={`md:hidden bg-white shadow-lg transition-all duration-300 ${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"}`}>
         <div className="container-section py-4 flex flex-col space-y-4">
           <Link href="/" className="text-dark hover:text-primary-dark font-medium transition-colors" onClick={toggleMenu}>
             Início
@@ -94,6 +102,15 @@ const Navbar = () => {
           <Link href="/contato" className="text-dark hover:text-primary-dark font-medium transition-colors" onClick={toggleMenu}>
             Contato
           </Link>
+          <a 
+            href="https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-primary text-center"
+            onClick={toggleMenu}
+          >
+            Agendar Consulta
+          </a>
         </div>
       </div>
     </nav>

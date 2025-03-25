@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[80vh] flex items-center bg-white">
+    <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center bg-white">
       <div className="absolute inset-0 bg-[url('/images/bg-pattern.svg')] opacity-10"></div>
       <div className="container-section relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">

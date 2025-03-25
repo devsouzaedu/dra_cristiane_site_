@@ -64,27 +64,33 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Contato</h3>
-              <div className="space-y-2">
-                <p className="flex items-center">
-                  <FaWhatsapp className="mr-2" />
-                  <span>(11) 99999-9999</span>
-                </p>
-                <p className="flex items-center">
-                  <FaEnvelope className="mr-2" />
-                  <span>contato@dracristiane.com.br</span>
-                </p>
-              </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Contato</h3>
+            <div className="space-y-2">
+              <a 
+                href="https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-primary transition-colors"
+              >
+                <FaWhatsapp className="mr-2" />
+                <span>(11) 99787-6371</span>
+              </a>
+              <a 
+                href="mailto:crisbia20@hotmail.com"
+                className="flex items-center hover:text-primary transition-colors"
+              >
+                <FaEnvelope className="mr-2" />
+                <span>crisbia20@hotmail.com</span>
+              </a>
             </div>
-            
-            <div>
+
+            <div className="mt-4">
               <p className="font-medium mb-1">Atendimento Presencial:</p>
               <p>Av. Trindade 254, Bethaville Office – Barueri</p>
             </div>
             
-            <div>
+            <div className="mt-4">
               <p className="font-medium mb-1">Atendimento Online:</p>
               <p>Disponível para pacientes no Brasil e no exterior</p>
             </div>
