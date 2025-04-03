@@ -6,11 +6,7 @@ import { PostFormData } from '@/types/blog';
 import { createPost, updatePost, getPostById, getCategorias } from '@/services/postService';
 import toast, { Toaster } from 'react-hot-toast';
 import { useParams } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import 'easymde/dist/easymde.min.css';
-
-// Importação dinâmica do editor de Markdown para evitar erros no lado do servidor
-const SimpleMdeReact = dynamic(() => import('react-simplemde-editor'), { ssr: false });
 
 // Função para gerar slug a partir do título
 const gerarSlug = (titulo: string): string => {
@@ -175,15 +171,6 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
       ...prev,
       categorias: prev.categorias.filter(c => c !== categoria)
     }));
-  };
-
-  // Opções para o editor de Markdown
-  const editorOptions = {
-    autofocus: false,
-    spellChecker: false,
-    placeholder: 'Escreva seu conteúdo em Markdown...',
-    status: ['lines', 'words'],
-    lineWrapping: true
   };
 
   if (carregando) {
