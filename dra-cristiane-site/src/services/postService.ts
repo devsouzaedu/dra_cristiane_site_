@@ -1,6 +1,5 @@
 import { supabase } from '@/lib/supabase';
 import { Post, PostFormData } from '@/types/blog';
-import { v4 as uuidv4 } from 'uuid';
 
 export async function getPosts({ 
   publicadosApenas = true, 

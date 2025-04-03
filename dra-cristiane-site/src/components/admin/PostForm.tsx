@@ -103,7 +103,7 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
         slug: gerarSlug(formData.titulo)
       }));
     }
-  }, [formData.titulo, editando]);
+  }, [formData.titulo, editando, formData.slug]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

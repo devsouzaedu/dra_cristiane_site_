@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth';
 import { getPosts, togglePostStatus, deletePost } from '@/services/postService';
 import { Post } from '@/types/blog';
@@ -18,8 +17,7 @@ const AdminDashboard = () => {
   const [filtroPulicados, setFiltroPulicados] = useState<boolean | null>(null);
   const postsPerPage = 10;
   
-  const { logout } = useAuth();
-  const router = useRouter();
+  const { } = useAuth();
 
   // Carregar posts
   const carregarPosts = async () => {
@@ -47,7 +45,7 @@ const AdminDashboard = () => {
   // Carregar posts ao iniciar ou quando os filtros mudarem
   useEffect(() => {
     carregarPosts();
-  }, [paginaAtual, filtroPulicados]);
+  }, [paginaAtual, filtroPulicados, carregarPosts]);
 
   // Função para buscar posts
   const handleBusca = (e: React.FormEvent) => {
