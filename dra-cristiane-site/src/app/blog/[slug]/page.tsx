@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getPostBySlug, getPosts } from "@/services/postService";
@@ -147,12 +148,14 @@ export default function PostPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-12 rounded-lg overflow-hidden shadow-lg max-h-[500px]"
+              className="mb-12 rounded-lg overflow-hidden shadow-lg max-h-[500px] relative w-full h-[400px]"
             >
-              <img
+              <Image
                 src={post.imagem_url}
                 alt={post.titulo}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
               />
             </motion.div>
           )}
@@ -182,10 +185,12 @@ export default function PostPage() {
                   >
                     <div className="h-40 bg-primary/20 relative">
                       {post.imagem_url ? (
-                        <img 
+                        <Image 
                           src={post.imagem_url} 
                           alt={post.titulo}
-                          className="w-full h-full object-cover" 
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 400px"
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">

@@ -1,13 +1,11 @@
 "use client";
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { useAuth } from '@/lib/auth';
 import LoginForm from '@/components/admin/LoginForm';
 import AdminDashboard from '@/components/admin/AdminDashboard';
 
 export default function AdminBlogPage() {
   const { autenticado, carregando } = useAuth();
-  const router = useRouter();
 
   if (carregando) {
     return (

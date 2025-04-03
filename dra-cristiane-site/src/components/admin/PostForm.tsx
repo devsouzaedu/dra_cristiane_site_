@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { PostFormData } from '@/types/blog';
 import { createPost, updatePost, getPostById, getCategorias } from '@/services/postService';
 import toast, { Toaster } from 'react-hot-toast';
@@ -49,6 +50,7 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
   const [categoriasSugeridas, setCategoriasSugeridas] = useState<string[]>([]);
   const [carregando, setCarregando] = useState(false);
   const [salvando, setSalvando] = useState(false);
+  const [imagemPreviewError, setImagemPreviewError] = useState(false);
   
   // Carregar dados do post para edição
   useEffect(() => {
@@ -106,10 +108,19 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Resetar error de imagem quando a URL mudar
+    if (name === 'imagem_url') {
+      setImagemPreviewError(false);
+    }
   };
 
   const handleEditorChange = (value: string) => {
     setFormData(prev => ({ ...prev, conteudo: value }));
+  };
+  
+  const handleImageError = () => {
+    setImagemPreviewError(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -238,6 +249,22 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2 border"
                 placeholder="https://exemplo.com/imagem.jpg"
               />
+              {formData.imagem_url && !imagemPreviewError ? (
+                <div className="mt-2 w-40 h-24 bg-gray-100 rounded overflow-hidden relative">
+                  <Image 
+                    src={formData.imagem_url} 
+                    alt="Preview"
+                    fill
+                    className="object-cover"
+                    onError={handleImageError}
+                    sizes="160px"
+                  />
+                </div>
+              ) : formData.imagem_url && imagemPreviewError ? (
+                <div className="mt-2 w-40 h-24 bg-gray-100 rounded overflow-hidden flex items-center justify-center text-red-500 text-xs">
+                  Imagem inválida
+                </div>
+              ) : null}
             </div>
 
             {/* Slug */}

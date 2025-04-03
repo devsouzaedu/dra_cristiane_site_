@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getPosts, getCategorias } from "@/services/postService";
@@ -49,7 +50,7 @@ const BlogPage = () => {
     };
     
     carregarDados();
-  }, [paginaAtual, categoriaAtiva]);
+  }, [paginaAtual, categoriaAtiva, categorias.length]);
 
   // Formatar data
   const formatarData = (dataString: string) => {
@@ -128,10 +129,12 @@ const BlogPage = () => {
                 >
                   <div className="h-48 bg-primary/20 relative">
                     {post.imagem_url ? (
-                      <img 
+                      <Image 
                         src={post.imagem_url} 
                         alt={post.titulo}
-                        className="w-full h-full object-cover" 
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 400px"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
