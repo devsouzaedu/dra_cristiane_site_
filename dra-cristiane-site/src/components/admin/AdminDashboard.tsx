@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/auth';
 import { getPosts, togglePostStatus, deletePost } from '@/services/postService';
 import { Post } from '@/types/blog';
@@ -19,8 +19,8 @@ const AdminDashboard = () => {
   
   const { } = useAuth();
 
-  // Carregar posts
-  const carregarPosts = async () => {
+  // Carregar posts - envolvido em useCallback para evitar recriação a cada renderização
+  const carregarPosts = useCallback(async () => {
     setCarregando(true);
     try {
       const { posts, total } = await getPosts({
@@ -40,12 +40,12 @@ const AdminDashboard = () => {
     } finally {
       setCarregando(false);
     }
-  };
+  }, [paginaAtual, filtroPulicados, busca, postsPerPage]);
 
   // Carregar posts ao iniciar ou quando os filtros mudarem
   useEffect(() => {
     carregarPosts();
-  }, [paginaAtual, filtroPulicados, carregarPosts]);
+  }, [carregarPosts]);
 
   // Função para buscar posts
   const handleBusca = (e: React.FormEvent) => {
