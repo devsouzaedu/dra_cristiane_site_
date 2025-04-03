@@ -199,7 +199,7 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
 
   // Opções para o editor de Markdown
   const editorOptions = {
-    autofocus: true,
+    autofocus: false,
     spellChecker: false,
     placeholder: 'Escreva seu conteúdo em Markdown...',
     status: ['lines', 'words'],
