@@ -135,6 +135,11 @@ const BlogPage = () => {
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 400px"
+                        unoptimized={!post.imagem_url.startsWith('/')}
+                        onError={() => {
+                          // Em caso de erro ao carregar a imagem, silenciosamente falhar
+                          console.log(`Erro ao carregar imagem: ${post.imagem_url}`);
+                        }}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">

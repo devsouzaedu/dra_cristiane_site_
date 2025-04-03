@@ -18,6 +18,7 @@ export default function PostPage() {
   const [postsRelacionados, setPostsRelacionados] = useState<Post[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
+  const [imagemError, setImagemError] = useState(false);
 
   useEffect(() => {
     const carregarPost = async () => {
@@ -55,6 +56,11 @@ export default function PostPage() {
     
     carregarPost();
   }, [slug]);
+
+  // Função para lidar com erro ao carregar imagem
+  const handleImageError = () => {
+    setImagemError(true);
+  };
 
   // Formatar data
   const formatarData = (dataString: string) => {
@@ -143,7 +149,7 @@ export default function PostPage() {
           </motion.div>
 
           {/* Imagem de Capa */}
-          {post.imagem_url && (
+          {post.imagem_url && !imagemError ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -156,17 +162,121 @@ export default function PostPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 1200px"
+                onError={handleImageError}
+                unoptimized={!post.imagem_url.startsWith('/')}
               />
             </motion.div>
-          )}
+          ) : null}
 
           {/* Conteúdo do Post */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-md p-8 prose prose-lg max-w-none"
+            className="bg-white rounded-lg shadow-md p-8 markdown-content"
           >
+            <style jsx global>{`
+              .markdown-content {
+                color: #333;
+                line-height: 1.7;
+                font-size: 1.1rem;
+              }
+              .markdown-content h1 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 1.5rem 0 1rem;
+                color: #1a1a1a;
+              }
+              .markdown-content h2 {
+                font-size: 1.75rem;
+                font-weight: 600;
+                margin: 1.5rem 0 1rem;
+                color: #1a1a1a;
+              }
+              .markdown-content h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 1.25rem 0 0.75rem;
+                color: #1a1a1a;
+              }
+              .markdown-content h4 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin: 1rem 0 0.5rem;
+                color: #1a1a1a;
+              }
+              .markdown-content p {
+                margin-bottom: 1.25rem;
+              }
+              .markdown-content ul, .markdown-content ol {
+                margin: 1rem 0;
+                padding-left: 2rem;
+              }
+              .markdown-content ul {
+                list-style-type: disc;
+              }
+              .markdown-content ol {
+                list-style-type: decimal;
+              }
+              .markdown-content li {
+                margin-bottom: 0.5rem;
+              }
+              .markdown-content a {
+                color: #0074d9;
+                text-decoration: underline;
+              }
+              .markdown-content a:hover {
+                color: #0056b3;
+              }
+              .markdown-content blockquote {
+                border-left: 4px solid #ccc;
+                margin: 1.5rem 0;
+                padding: 0.5rem 1rem;
+                color: #666;
+                background-color: #f9f9f9;
+                font-style: italic;
+              }
+              .markdown-content pre {
+                background-color: #f5f5f5;
+                padding: 1rem;
+                border-radius: 0.25rem;
+                overflow-x: auto;
+                margin: 1rem 0;
+              }
+              .markdown-content code {
+                background-color: #f5f5f5;
+                padding: 0.2rem 0.4rem;
+                border-radius: 0.25rem;
+                font-family: monospace;
+              }
+              .markdown-content img {
+                max-width: 100%;
+                height: auto;
+                margin: 1.5rem 0;
+                border-radius: 0.25rem;
+              }
+              .markdown-content hr {
+                border: 0;
+                height: 1px;
+                background-color: #eaeaea;
+                margin: 2rem 0;
+              }
+              .markdown-content table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 1.5rem 0;
+              }
+              .markdown-content th, .markdown-content td {
+                padding: 0.75rem;
+                border: 1px solid #ddd;
+                text-align: left;
+              }
+              .markdown-content th {
+                background-color: #f5f5f5;
+                font-weight: 600;
+              }
+            `}</style>
+
             <ReactMarkdown>{post.conteudo}</ReactMarkdown>
           </motion.div>
 
