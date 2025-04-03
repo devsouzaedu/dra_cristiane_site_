@@ -52,26 +52,6 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
   const [salvando, setSalvando] = useState(false);
   const [imagemPreviewError, setImagemPreviewError] = useState(false);
   
-  // Efeito para evitar rolagem automática ao digitar
-  useEffect(() => {
-    const handleScroll = () => {
-      // Armazenar a posição de rolagem atual
-      const scrollPosition = window.scrollY;
-      
-      // Restaurar esta posição após qualquer alteração que possa causar rolagem
-      setTimeout(() => {
-        window.scrollTo(0, scrollPosition);
-      }, 0);
-    };
-
-    // Adicionar listener para eventos de input que podem causar rolagem
-    document.addEventListener('input', handleScroll);
-    
-    return () => {
-      document.removeEventListener('input', handleScroll);
-    };
-  }, []);
-
   // Carregar dados do post para edição
   useEffect(() => {
     const carregarCategorias = async () => {
@@ -203,6 +183,7 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
     spellChecker: false,
     placeholder: 'Escreva seu conteúdo em Markdown...',
     status: ['lines', 'words'],
+    lineWrapping: true
   };
 
   if (carregando) {
@@ -415,10 +396,15 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
                 Conteúdo (Markdown)
               </label>
               
-              <SimpleMdeReact
+              {/* Editor Markdown */}
+              <textarea
+                id="conteudo"
+                name="conteudo"
                 value={formData.conteudo}
-                onChange={handleEditorChange}
-                options={editorOptions}
+                onChange={(e) => handleEditorChange(e.target.value)}
+                rows={15}
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2 border"
+                placeholder="Escreva seu conteúdo em Markdown..."
               />
             </div>
           </div>
