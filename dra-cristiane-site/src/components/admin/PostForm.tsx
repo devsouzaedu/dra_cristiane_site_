@@ -315,7 +315,7 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
                 <button
                   type="button"
                   onClick={adicionarCategoria}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-primary-dark hover:bg-primary-dark/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
                 >
                   Adicionar
                 </button>
@@ -397,18 +397,18 @@ const PostForm = ({ idPost }: PostFormProps = {}) => {
           </div>
         </div>
         
-        <div className="bg-gray-50 px-6 py-4 flex justify-between">
+        <div className="bg-gray-50 px-6 py-4 flex flex-col sm:flex-row gap-3 sm:gap-0 sm:justify-between">
           <button
             type="button"
             onClick={() => router.push('/adminblog')}
-            className="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            className="px-4 py-2 border border-gray-400 rounded-md shadow-sm text-sm font-medium text-gray-800 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark w-full sm:w-auto"
           >
             Cancelar
           </button>
           <button
             type="submit"
             disabled={salvando}
-            className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark flex items-center"
+            className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-dark hover:bg-primary-dark/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark flex items-center justify-center w-full sm:w-auto"
           >
             {salvando ? (
               <>

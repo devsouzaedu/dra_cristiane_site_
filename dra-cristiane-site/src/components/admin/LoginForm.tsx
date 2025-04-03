@@ -39,7 +39,7 @@ const LoginForm = () => {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-primary-dark">
             Painel Administrativo
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-gray-700">
             Área restrita para gerenciamento do blog
           </p>
         </div>
@@ -47,8 +47,8 @@ const LoginForm = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="senha" className="sr-only">
-                Senha
+              <label htmlFor="senha" className="block text-sm font-medium text-gray-700 mb-1">
+                Senha de acesso
               </label>
               <input
                 id="senha"
@@ -57,21 +57,21 @@ const LoginForm = () => {
                 required
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-                className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-dark focus:border-primary-dark focus:z-10 sm:text-sm"
                 placeholder="Digite a senha de acesso"
               />
             </div>
           </div>
 
           {erro && (
-            <div className="text-red-500 text-sm text-center">{erro}</div>
+            <div className="text-red-600 text-sm text-center font-medium">{erro}</div>
           )}
 
           <div>
             <button
               type="submit"
               disabled={carregando}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-dark hover:bg-primary-dark/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
             >
               {carregando ? (
                 <span className="flex items-center">
@@ -89,7 +89,10 @@ const LoginForm = () => {
         </form>
         
         <div className="mt-6 text-center">
-          <Link href="/" className="text-sm text-primary hover:text-primary-dark">
+          <Link 
+            href="/" 
+            className="text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md inline-block"
+          >
             Voltar para o site
           </Link>
         </div>

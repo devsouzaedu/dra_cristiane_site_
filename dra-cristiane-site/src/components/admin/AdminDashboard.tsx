@@ -115,18 +115,18 @@ const AdminDashboard = () => {
               </h2>
             </div>
             
-            <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
-              <form onSubmit={handleBusca} className="relative">
+            <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 w-full md:w-auto">
+              <form onSubmit={handleBusca} className="relative w-full md:w-auto">
                 <input
                   type="text"
                   placeholder="Buscar posts..."
                   value={busca}
                   onChange={(e) => setBusca(e.target.value)}
-                  className="pl-3 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  className="pl-3 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-dark focus:border-primary-dark w-full"
                 />
                 <button
                   type="submit"
-                  className="absolute right-0 top-0 h-full px-3 text-gray-400 hover:text-gray-600"
+                  className="absolute right-0 top-0 h-full px-3 text-gray-600 hover:text-gray-800"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
@@ -134,33 +134,33 @@ const AdminDashboard = () => {
                 </button>
               </form>
               
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 overflow-x-auto pb-2 md:pb-0">
                 <button
                   onClick={() => setFiltroPulicados(null)}
-                  className={`px-3 py-2 text-sm font-medium rounded-md ${
+                  className={`px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap ${
                     filtroPulicados === null
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-primary-dark text-white'
+                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                   }`}
                 >
                   Todos
                 </button>
                 <button
                   onClick={() => setFiltroPulicados(true)}
-                  className={`px-3 py-2 text-sm font-medium rounded-md ${
+                  className={`px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap ${
                     filtroPulicados === true
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-primary-dark text-white'
+                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                   }`}
                 >
                   Publicados
                 </button>
                 <button
                   onClick={() => setFiltroPulicados(false)}
-                  className={`px-3 py-2 text-sm font-medium rounded-md ${
+                  className={`px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap ${
                     filtroPulicados === false
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-primary-dark text-white'
+                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                   }`}
                 >
                   Rascunhos
@@ -169,7 +169,7 @@ const AdminDashboard = () => {
               
               <Link
                 href="/adminblog/novo"
-                className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition duration-150 flex items-center"
+                className="px-4 py-2 bg-primary-dark text-white rounded-md hover:bg-primary-dark/90 transition duration-150 flex items-center justify-center whitespace-nowrap"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
@@ -298,8 +298,8 @@ const AdminDashboard = () => {
           
           {/* Paginação */}
           {totalPosts > postsPerPage && (
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
-              <div className="text-sm text-gray-500">
+            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="text-sm text-gray-500 w-full sm:w-auto text-center sm:text-left">
                 Mostrando {posts.length} de {totalPosts} posts
               </div>
               <div className="flex space-x-2">
@@ -309,7 +309,7 @@ const AdminDashboard = () => {
                   className={`px-3 py-1 rounded-md text-sm ${
                     paginaAtual === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                      : 'bg-white border border-gray-400 text-gray-800 hover:bg-gray-50'
                   }`}
                 >
                   Anterior
@@ -320,7 +320,7 @@ const AdminDashboard = () => {
                   className={`px-3 py-1 rounded-md text-sm ${
                     posts.length < postsPerPage || posts.length === 0
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                      : 'bg-white border border-gray-400 text-gray-800 hover:bg-gray-50'
                   }`}
                 >
                   Próximo
