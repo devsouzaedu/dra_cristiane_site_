@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="container-section py-0">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-dark">
-              Dra. Cristiane
+              Cristiane Duarte
             </Link>
 
             <div className="flex items-center gap-4">

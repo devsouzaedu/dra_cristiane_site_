@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container-section py-0">
         <div className="grid md:grid-cols-3 gap-6">
           <div>
-            <h3 className="text-xl font-semibold mb-3">Dra. Cristiane Pereira Duarte</h3>
+            <h3 className="text-xl font-semibold mb-3">Cristiane Pereira Duarte</h3>
             <p className="mb-1">Psicóloga Clínica e Hospitalar</p>
             <p className="mb-2">CRP n. 06/63449-8</p>
             <div className="flex space-x-4 mt-3">
@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-4 text-center">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} Dra. Cristiane Pereira Duarte. Todos os direitos reservados.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Cristiane Pereira Duarte. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

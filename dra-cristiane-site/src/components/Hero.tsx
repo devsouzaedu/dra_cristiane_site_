@@ -15,7 +15,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark mb-4">
-              Dra. Cristiane Pereira Duarte
+             Cristiane Pereira Duarte
             </h1>
             <h2 className="text-2xl sm:text-3xl font-medium text-secondary mb-4">
               Psicóloga Clínica e Hospitalar
