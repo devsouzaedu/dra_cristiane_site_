@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useAuth } from '@/lib/auth';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
   const { login } = useAuth();
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,12 +23,22 @@ const LoginForm = () => {
       
       if (sucesso) {
         toast.success('Login realizado com sucesso!');
+        
+        // Adicionar um pequeno atraso antes de recarregar a página
+        // para garantir que o toast seja exibido e o estado de autenticação seja atualizado
+        setTimeout(() => {
+          // Forçar atualização da página para refletir o novo estado de autenticação
+          router.refresh();
+          
+          // Também podemos redirecionar para a mesma página
+          // para garantir que o estado seja recarregado corretamente
+          window.location.href = '/adminblog';
+        }, 1000);
       } else {
         setErro('Senha incorreta. Tente novamente.');
         toast.error('Senha incorreta. Tente novamente.');
+        setCarregando(false);
       }
-      
-      setCarregando(false);
     }, 800);
   };
 
