@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,29 +18,20 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={inter.className}>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17161658555"></script>
-        <script
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17161658555"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-17161658555');
-              
-              function gtag_report_conversion(url) {
-                var callback = function() {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17161658555/J0UVCJL8utUaELvBqPc_',
-                    'value': 1.0,
-                    'currency': 'BRL',
-                    'event_callback': callback
-                });
-                return false;
-              }
             `
           }}
         />
