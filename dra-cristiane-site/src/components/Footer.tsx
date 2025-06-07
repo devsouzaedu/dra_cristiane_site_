@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { gtag_report_conversion } from "@/utils/analytics";
 
 const Footer = () => {
   return (
@@ -72,6 +73,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-primary transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  gtag_report_conversion('https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta');
+                }}
               >
                 <FaWhatsapp className="mr-2" />
                 <span>(11) 99787-6371</span>

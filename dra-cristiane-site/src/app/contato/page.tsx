@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { gtag_report_conversion } from "@/utils/analytics";
 
 const ContatoPage = () => {
   const [formData, setFormData] = useState({
@@ -105,6 +106,10 @@ const ContatoPage = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="hover:text-primary-dark transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          gtag_report_conversion('https://wa.me/5511997876371?text=Gostaria%20de%20agendar%20uma%20consulta');
+                        }}
                       >
                         (11) 99787-6371
                       </a>
