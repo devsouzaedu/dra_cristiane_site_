@@ -17,6 +17,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={inter.className}>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17161658555"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17161658555');
+            `
+          }}
+        />
         {children}
       </body>
     </html>
