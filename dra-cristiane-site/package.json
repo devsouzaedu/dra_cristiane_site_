@@ -15,7 +15,7 @@
     "framer-motion": "^12.5.0",
     "jsonwebtoken": "^9.0.2",
     "marked": "^15.0.7",
-    "next": "^15.2.9",
+    "next": "^15.5.26",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
     "react": "^19.3.0",
@@ -37,7 +37,7 @@
     "@types/react-scroll": "^1.8.10",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "^15.2.9",
+    "eslint-config-next": "^15.5.26",
     "typescript": "^5"
   }
 }
